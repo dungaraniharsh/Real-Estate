@@ -1,11 +1,13 @@
 {
   "name": "next-realestate",
   "private": true,
+  "homepage": "https://dungaraniharsh.github.io/Real-Estate/",
   "scripts": {
     "vercel-build": "next build",
     "dev": "concurrently \"node backend/server.js\" \"next\"",
     "build": "next build",
-    "deploy": "vercel build && vercel deploy --prebuilt",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build",
     "start": "concurrently \"node backend/server.js\" \"next start\"",
     "lint": "next lint"
   },
